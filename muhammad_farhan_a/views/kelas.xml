@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- model.name action window -->
+    <record id="kelas_action" model="ir.actions.act_window">
+        <field name="name">Kantor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">erpd.kelas</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                Ini adalah Kantor Kelas ERP D Tahun 2023
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="kelas_root" 
+        name="KANTOR" 
+        sequence="10"/>
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kelas_ERPD_root" 
+        name="Kantor ERP D" 
+        parent="kelas_root" 
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kelas_ERPC_root" 
+        name="Kantor ERP C" 
+        parent="kelas_root" 
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kelas_ERP_D" 
+        name="Kantor Kelas ERP D" 
+        parent="kelas_ERPD_root" 
+        action="kelas_action"
+        sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="kelas_ERP_C" 
+        name="Kantor Kelas ERP C" 
+        parent="kelas_ERPC_root" 
+        action="kelas_action"
+        sequence="10"/>
+</odoo>
